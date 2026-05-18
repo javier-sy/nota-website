@@ -1,0 +1,35 @@
+#-------------------------------
+# Site Settings
+title: Nota
+logo: # You can add own logo. For example '/images/logo.png'.
+author: Javier Sánchez Yeste
+description: Nota — Claude Code plugin for algorithmic composition with MusaDSL
+
+#-------------------------------
+# Menu Settings
+menu__settings:
+  menu__items:
+    - title: 'Home'
+      url: '/#home'
+    - title: 'About'
+      url: '/#about'
+    - title: 'Skills'
+      url: '/#skills'
+    - title: 'Knowledge'
+      url: '/#knowledge'
+    - title: 'Getting Started'
+      url: '/#getting-started'
+    - title: 'MusaDSL'
+      url: 'https://musadsl.yeste.studio'
+      external: true
+
+#-------------------------------
+# Footer Settings
+social:
+  - {icon: "logo-github", color: "#24292e", label: Github, link: "https://github.com/javier-sy"}
+
+#-------------------------------
+# Contact Settings
+contact:
+  email: javier@yeste.studio
+  author_website: https://yeste.studio

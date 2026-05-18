@@ -1,0 +1,372 @@
+---
+layout: default
+title: Nota — Claude Code plugin for algorithmic composition with MusaDSL
+description: Nota turns Claude Code into an algorithmic-composition assistant for MusaDSL. Ten skills cover learning, ideation, coding, analysis and best-practice consolidation, backed by a knowledge base with documentation, API reference, 23 demos and your own indexed compositions.
+---
+
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+  <div class="container">
+    <h1 class="hero__title">Nota</h1>
+    <p class="hero__subtitle">Claude Code plugin for algorithmic composition with MusaDSL — learn the framework, code compositions, explore ideas, analyze music</p>
+    <div class="hero__meta">
+      <div class="meta-item">
+        <ion-icon name="sparkles-outline"></ion-icon>
+        <span>10 interactive skills</span>
+      </div>
+      <div class="meta-item">
+        <ion-icon name="library-outline"></ion-icon>
+        <span>Knowledge base + semantic search</span>
+      </div>
+      <div class="meta-item">
+        <ion-icon name="code-slash-outline"></ion-icon>
+        <span>Open Source · LGPL 3.0</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="content-section">
+  <div class="container">
+    <h2 class="section__title">About Nota</h2>
+    <div class="section__content">
+      <p>
+        <strong>Nota</strong> transforms <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>
+        into an algorithmic-composition assistant with deep knowledge of the
+        <a href="https://musadsl.yeste.studio">MusaDSL</a> framework. Ten interactive skills cover the
+        entire creative process — from understanding the framework, through brainstorming ideas, to
+        writing verified code, analyzing the results, and consolidating best practices.
+      </p>
+      <p>
+        Everything is backed by a knowledge base with MusaDSL documentation, API reference, 23 demo
+        projects, 23 built-in composition best practices, and — optionally — your own compositions and
+        their musical analyses.
+      </p>
+      <p>
+        Say <strong>"hello musa"</strong> inside Claude Code to get a welcome and capabilities overview.
+      </p>
+      <p>
+        <strong>Who is it for?</strong>
+      </p>
+      <ul>
+        <li>Composers learning MusaDSL — ask questions in natural language, get sourced answers.</li>
+        <li>Working algorithmic composers — describe a musical intention, get verified code.</li>
+        <li>Researchers — build a searchable knowledge base of your own compositions and analyses.</li>
+        <li>Anyone exploring computer music who wants Claude to be domain-aware rather than guessing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="content-section">
+  <div class="container">
+    <h2 class="section__title">The 10 Skills</h2>
+    <div class="component-category">
+      <h3 class="category__title">Core composition workflow</h3>
+      <div class="components-grid">
+
+        <div class="component-card">
+          <h4 class="component__title"><code>/nota:explain</code></h4>
+          <p class="component__description">
+            <strong>Semantic search over MusaDSL.</strong> Ask about any concept and get an accurate,
+            sourced answer with relevant documentation, API details, and working code examples
+            retrieved from the knowledge base.
+          </p>
+        </div>
+
+        <div class="component-card">
+          <h4 class="component__title"><code>/nota:think</code></h4>
+          <p class="component__description">
+            <strong>Creative thinking and ideation.</strong> Generates ideas for new compositions or
+            explores new directions for existing ones. Draws from the inspiration framework, your
+            previous analyses, the MusaDSL knowledge base, and the open web to connect ideas to
+            composers, techniques and traditions with accurate references.
+          </p>
+        </div>
+
+        <div class="component-card">
+          <h4 class="component__title"><code>/nota:code</code></h4>
+          <p class="component__description">
+            <strong>Composition coding.</strong> Translates musical intentions into working MusaDSL
+            Ruby code. Verifies every method call against the API, draws from demo examples and your
+            own indexed works, and always proposes the approach before writing.
+          </p>
+        </div>
+
+        <div class="component-card">
+          <h4 class="component__title"><code>/nota:index</code></h4>
+          <p class="component__description">
+            <strong>Works indexing.</strong> Add your composition projects so Claude can reference
+            them. All <code>.rb</code> and <code>.md</code> files are indexed recursively; once
+            indexed, your works appear in search results and inform every other skill.
+          </p>
+        </div>
+
+        <div class="component-card">
+          <h4 class="component__title"><code>/nota:analyze</code></h4>
+          <p class="component__description">
+            <strong>Musical analysis.</strong> Reads your code, interprets it musically, and produces a
+            detailed structured analysis across 10 default dimensions. The analysis is stored as
+            searchable knowledge, enriching every future <code>/nota:think</code>, <code>/nota:code</code>
+            and <code>/nota:explain</code> session.
+          </p>
+        </div>
+
+        <div class="component-card">
+          <h4 class="component__title"><code>/nota:best-practices</code></h4>
+          <p class="component__description">
+            <strong>Best practices management.</strong> Extract recurring patterns from your analyses
+            into reusable best practices, or add them manually. <code>/nota:code</code> automatically
+            consults them when writing new code, so your consolidated patterns are applied
+            consistently.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="component-category">
+      <h3 class="category__title">Framework customization</h3>
+      <div class="components-grid">
+
+        <div class="component-card">
+          <h4 class="component__title"><code>/nota:inspiration-framework</code></h4>
+          <p class="component__description">
+            View, modify or reset the <strong>inspiration framework</strong> that guides
+            <code>/nota:think</code>. The default has 9 dimensions: <em>Structure, Time, Pitch,
+            Algorithm, Texture, Instrumentation, Reference, Dialogue, Constraint</em>. Add your own
+            dimensions or rewrite them entirely.
+          </p>
+        </div>
+
+        <div class="component-card">
+          <h4 class="component__title"><code>/nota:analysis-framework</code></h4>
+          <p class="component__description">
+            View, modify or reset the <strong>analysis framework</strong> that guides
+            <code>/nota:analyze</code>. The default has 10 dimensions: <em>Formal Structure, Harmonic
+            and Modal Language, Rhythmic and Temporal Strategy, Generative Strategy, Texture and
+            Instrumentation, Idiomatic Usage, Relation to Other Artists, Notable Technical Patterns,
+            Coding Best Practices, Conclusion</em>. Customize per your compositional priorities.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="component-category">
+      <h3 class="category__title">Onboarding & operations</h3>
+      <div class="components-grid">
+
+        <div class="component-card">
+          <h4 class="component__title"><code>/nota:hello</code></h4>
+          <p class="component__description">
+            Welcome and capabilities overview. Start here when interacting with Nota for the first
+            time, or trigger it by saying <strong>"hello musa"</strong>.
+          </p>
+        </div>
+
+        <div class="component-card">
+          <h4 class="component__title"><code>/nota:setup</code></h4>
+          <p class="component__description">
+            Plugin configuration and troubleshooting. Verifies the Voyage AI API key, checks
+            knowledge base download, confirms MCP server connectivity. Run this after install.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Knowledge Section -->
+<section id="knowledge" class="content-section">
+  <div class="container">
+    <h2 class="section__title">Knowledge bases</h2>
+    <div class="section__content">
+      <p>
+        Nota's depth comes from two SQLite-vec databases queried with Voyage AI embeddings, which let
+        every skill ground its output in concrete sources rather than the model's general knowledge.
+      </p>
+
+      <table class="libraries-table">
+        <thead>
+          <tr>
+            <th>Database</th>
+            <th>Scope</th>
+            <th>Storage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><code>knowledge.db</code></strong></td>
+            <td>
+              MusaDSL documentation, API reference, 23 demo projects, 23 built-in composition best
+              practices. <strong>Auto-downloaded</strong> on first session start.
+            </td>
+            <td>Shipped with the plugin, refreshed when the plugin updates.</td>
+          </tr>
+          <tr>
+            <td><strong><code>private.db</code></strong></td>
+            <td>
+              Your indexed compositions (added with <code>/nota:index</code>), their musical analyses
+              (created with <code>/nota:analyze</code>), and your custom best practices
+              (<code>/nota:best-practices</code>). Search across them as easily as the public docs.
+            </td>
+            <td>Local, in <code>~/.config/nota/</code>. Never leaves your machine.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 1.5rem;">
+        Both databases use <a href="https://github.com/asg017/sqlite-vec" target="_blank" rel="noopener">sqlite-vec</a>
+        for vector storage and <a href="https://www.voyageai.com/" target="_blank" rel="noopener">Voyage AI</a>
+        for high-quality multilingual code-aware embeddings. The plugin's MCP server exposes a
+        <code>search</code> tool that every skill consults transparently.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Workflow Section -->
+<section id="workflow" class="content-section">
+  <div class="container">
+    <h2 class="section__title">Workflow loop</h2>
+    <div class="section__content">
+      <p>
+        Skills feed into each other. Used together, they form a virtuous loop where each composition
+        enriches the assistant for the next one:
+      </p>
+      <p style="font-family: monospace; padding: 1rem; background: rgba(0,0,0,0.04); border-radius: 4px;">
+        <code>/nota:think</code> &rarr;
+        <code>/nota:code</code> &rarr;
+        <code>/nota:index</code> &rarr;
+        <code>/nota:analyze</code> &rarr;
+        <code>/nota:best-practices</code> &rarr;
+        back to <code>/nota:think</code>
+      </p>
+      <ul>
+        <li><strong>Think</strong> — explore ideas across the inspiration dimensions, informed by your past work.</li>
+        <li><strong>Code</strong> — turn the idea into verified MusaDSL code, consulting docs, demos and best practices.</li>
+        <li><strong>Index</strong> — add the finished composition to your private knowledge base.</li>
+        <li><strong>Analyze</strong> — generate a structured musical analysis of the work.</li>
+        <li><strong>Best-practices</strong> — extract recurring patterns from your analyses into reusable practices.</li>
+        <li><strong>Think</strong> again — now your future ideation draws from a richer corpus.</li>
+      </ul>
+      <p>
+        The more you compose and analyze, the more domain-aware Nota becomes for your specific style.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Getting Started Section -->
+<section id="getting-started" class="content-section getting-started">
+  <div class="container">
+    <h2 class="section__title">Getting Started</h2>
+    <div class="section__content install-steps">
+
+      <h3>Prerequisites</h3>
+      <ul>
+        <li><a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a> (the plugin runs inside it).</li>
+        <li><a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">Ruby 3.1+</a> (the plugin's MCP server is Ruby).</li>
+        <li>A <a href="https://dash.voyageai.com/" target="_blank" rel="noopener">Voyage AI</a> API key. The free tier is sufficient for personal use.</li>
+      </ul>
+
+      <h3>Install (3 steps inside Claude Code)</h3>
+      <ol>
+        <li>
+          Add the Nota marketplace to Claude Code:
+          <pre><code>/plugin marketplace add javier-sy/nota-plugin-for-claude</code></pre>
+        </li>
+        <li>
+          Install the plugin:
+          <pre><code>/plugin install nota@yeste.studio</code></pre>
+        </li>
+        <li>
+          Export the Voyage API key in your shell profile (so Claude Code's subprocess inherits it):
+          <pre><code>export VOYAGE_API_KEY="your-key-here"</code></pre>
+        </li>
+      </ol>
+
+      <h3>Verify</h3>
+      <p>
+        Run <code>/nota:setup</code> inside Claude Code to verify Ruby, the Voyage key, knowledge base
+        download and MCP server connectivity. Then say <strong>"hello musa"</strong> for the welcome
+        tour, or jump straight into <code>/nota:explain how does the sequencer work?</code>.
+      </p>
+
+      <h3>What gets downloaded</h3>
+      <p>
+        On first session start, Nota downloads the latest <code>knowledge.db</code> (a few MB of
+        MusaDSL documentation, API reference, demos and best practices, all pre-indexed with their
+        Voyage embeddings). Your <code>private.db</code> is created empty under
+        <code>~/.config/nota/</code> the first time you use <code>/nota:index</code> or
+        <code>/nota:analyze</code>; nothing private leaves your machine.
+      </p>
+
+      <h3>Repository</h3>
+      <p>
+        Source code and detailed README:
+        <a href="https://github.com/javier-sy/nota-plugin-for-claude" target="_blank" rel="noopener">
+          <ion-icon name="logo-github"></ion-icon> javier-sy/nota-plugin-for-claude
+        </a>
+      </p>
+
+      <h3>Troubleshooting</h3>
+      <table class="libraries-table">
+        <thead>
+          <tr>
+            <th>Symptom</th>
+            <th>Likely cause / fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>/nota:setup</code> says Voyage key missing</td>
+            <td>Re-source your shell profile, or restart Claude Code so it inherits the updated env.</td>
+          </tr>
+          <tr>
+            <td>Knowledge base did not download</td>
+            <td>Check internet connectivity; <code>/nota:setup</code> retries the download.</td>
+          </tr>
+          <tr>
+            <td>Search returns empty results</td>
+            <td>The plugin may not have indexed your local works yet — run <code>/nota:index</code> on the project root.</td>
+          </tr>
+          <tr>
+            <td>MCP server connection failing</td>
+            <td>Check <code>~/.config/nota/</code> permissions; <code>/nota:setup</code> diagnoses it.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</section>
+
+<!-- Author Section -->
+<section id="author" class="content-section author-section">
+  <div class="container">
+    <h2 class="section__title">Author</h2>
+    <div class="author__info">
+      <p>
+        Nota is created and maintained by
+        <a href="https://yeste.studio" target="_blank" rel="noopener">yeste.studio</a>,
+        exploring the intersection of sound, music, technology, and algorithmic composition.
+        It is part of the <a href="https://musadsl.yeste.studio">MusaDSL</a> family of projects.
+      </p>
+      <p style="margin-top: 1.5rem;">
+        <span class="license-badge">
+          <ion-icon name="scale-outline"></ion-icon>
+          LGPL 3.0 License
+        </span>
+      </p>
+      <p style="margin-top: 1rem; font-size: 0.95rem;">
+        Source code on
+        <a href="https://github.com/javier-sy/nota-plugin-for-claude" target="_blank" rel="noopener">GitHub</a>.
+      </p>
+    </div>
+  </div>
+</section>
