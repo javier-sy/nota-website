@@ -1,0 +1,8 @@
+# Configuración de versión para nota-website
+TYPE="site"
+PKG_NAME="nota.yeste.studio"
+TEST_COMMAND=""
+PUBLISH_PLATFORM="GitHub Pages"
+SITE_URL="https://nota.yeste.studio"
+# Los websites no usan versionado: publish = git push, sin tag.
+TAG_ON_PUBLISH=false
