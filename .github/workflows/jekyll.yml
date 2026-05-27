@@ -1,7 +1,3 @@
-# Build and deploy the Jekyll site to GitHub Pages via Actions.
-# Same workflow as the other yeste.studio Pages sites — visible runs,
-# full build logs, deterministic Gemfile-driven gem resolution.
-
 name: Deploy Jekyll site to Pages
 
 on:
