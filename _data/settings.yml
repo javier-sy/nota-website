@@ -3,7 +3,7 @@
 title: Nota
 logo: # You can add own logo. For example '/images/logo.png'.
 author: Javier Sánchez Yeste
-description: Nota — Claude Code plugin for algorithmic composition with MusaDSL
+description: Nota — AI coding plugin (Claude Code & opencode) for algorithmic composition with MusaDSL
 
 #-------------------------------
 # Menu Settings

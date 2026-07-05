@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Nota — Claude Code plugin for algorithmic composition with MusaDSL
-description: Nota turns Claude Code into an algorithmic-composition assistant for MusaDSL. Ten skills cover learning, ideation, coding, analysis and best-practice consolidation, backed by a knowledge base with documentation, API reference, 23 demos and your own indexed compositions.
+title: Nota — AI coding plugin for algorithmic composition with MusaDSL
+description: Nota turns your AI coding agent (Claude Code or opencode) into an algorithmic-composition assistant for MusaDSL. Ten skills cover learning, ideation, coding, analysis and best-practice consolidation, backed by a knowledge base with documentation, API reference, 23 demos and your own indexed compositions.
 ---
 
 <!-- Hero Section -->
 <section id="home" class="hero-section">
   <div class="container">
     <h1 class="hero__title">Nota</h1>
-    <p class="hero__subtitle">Claude Code plugin for algorithmic composition with MusaDSL — learn the framework, code compositions, explore ideas, analyze music</p>
+    <p class="hero__subtitle">AI coding plugin (Claude Code &amp; opencode) for algorithmic composition with MusaDSL — learn the framework, code compositions, explore ideas, analyze music</p>
     <div class="hero__meta">
       <div class="meta-item">
         <ion-icon name="sparkles-outline"></ion-icon>
@@ -20,7 +20,11 @@ description: Nota turns Claude Code into an algorithmic-composition assistant fo
       </div>
       <div class="meta-item">
         <ion-icon name="code-slash-outline"></ion-icon>
-        <span>Open Source · LGPL 3.0</span>
+        <span>Open Source · GPL 3.0</span>
+      </div>
+      <div class="meta-item">
+        <ion-icon name="cube-outline"></ion-icon>
+        <span>Claude Code &amp; opencode</span>
       </div>
     </div>
   </div>
@@ -32,7 +36,7 @@ description: Nota turns Claude Code into an algorithmic-composition assistant fo
     <h2 class="section__title">About Nota</h2>
     <div class="section__content">
       <p>
-        <strong>Nota</strong> transforms <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>
+        <strong>Nota</strong> transforms your AI coding agent — <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a> or <a href="https://opencode.ai" target="_blank" rel="noopener">opencode</a> —
         into an algorithmic-composition assistant with deep knowledge of the
         <a href="https://musadsl.yeste.studio">MusaDSL</a> framework. Ten interactive skills cover the
         entire creative process — from understanding the framework, through brainstorming ideas, to
@@ -44,7 +48,7 @@ description: Nota turns Claude Code into an algorithmic-composition assistant fo
         their musical analyses.
       </p>
       <p>
-        Say <strong>"hello musa"</strong> inside Claude Code to get a welcome and capabilities overview.
+        Say <strong>"hello musa"</strong> inside Claude Code (or just ask for a capabilities overview in opencode) to get a welcome tour.
       </p>
       <p>
         <strong>Who is it for?</strong>
@@ -53,7 +57,7 @@ description: Nota turns Claude Code into an algorithmic-composition assistant fo
         <li>Composers learning MusaDSL — ask questions in natural language, get sourced answers.</li>
         <li>Working algorithmic composers — describe a musical intention, get verified code.</li>
         <li>Researchers — build a searchable knowledge base of your own compositions and analyses.</li>
-        <li>Anyone exploring computer music who wants Claude to be domain-aware rather than guessing.</li>
+        <li>Anyone exploring computer music who wants their AI coding agent to be domain-aware rather than guessing.</li>
       </ul>
     </div>
   </div>
@@ -177,6 +181,12 @@ description: Nota turns Claude Code into an algorithmic-composition assistant fo
 
       </div>
     </div>
+
+    <p style="margin-top: 1.5rem;">
+      The <code>/nota:</code> commands above are how Claude Code invokes these skills. In opencode, the
+      same skills are <strong>model-invoked</strong>: they trigger automatically based on your task
+      context (no slash command needed).
+    </p>
   </div>
 </section>
 
@@ -267,34 +277,71 @@ description: Nota turns Claude Code into an algorithmic-composition assistant fo
     <h2 class="section__title">Getting Started</h2>
     <div class="section__content install-steps">
 
-      <h3>Prerequisites</h3>
+      <h3>Prerequisites (both harnesses)</h3>
       <ul>
-        <li><a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a> (the plugin runs inside it).</li>
-        <li><a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">Ruby 3.1+</a> (the plugin's MCP server is Ruby).</li>
+        <li><a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">Ruby 3.1+</a> — the plugin's MCP server is Ruby.</li>
         <li>A <a href="https://dash.voyageai.com/" target="_blank" rel="noopener">Voyage AI</a> API key. The free tier is sufficient for personal use.</li>
-      </ul>
-
-      <h3>Install (3 steps inside Claude Code)</h3>
-      <ol>
-        <li>
-          Add the Nota marketplace to Claude Code:
-          <pre><code>/plugin marketplace add javier-sy/nota-plugin-for-claude</code></pre>
-        </li>
-        <li>
-          Install the plugin:
-          <pre><code>/plugin install nota@yeste.studio</code></pre>
-        </li>
-        <li>
-          Export the Voyage API key in your shell profile (so Claude Code's subprocess inherits it):
+        <li>Export the Voyage API key in your shell profile so the MCP server's subprocess inherits it:
           <pre><code>export VOYAGE_API_KEY="your-key-here"</code></pre>
         </li>
-      </ol>
+      </ul>
+
+      <h3>Install</h3>
+      <div class="tabs">
+        <div class="tab-triggers">
+          <button class="tab-trigger is-active" data-tab="claude-code">Claude Code</button>
+          <button class="tab-trigger" data-tab="opencode">opencode</button>
+        </div>
+
+        <div class="tab-panel is-active" id="tab-claude-code">
+          <ol>
+            <li>
+              Add the Nota marketplace to Claude Code:
+              <pre><code>/plugin marketplace add javier-sy/nota-plugin</code></pre>
+            </li>
+            <li>
+              Install the plugin:
+              <pre><code>/plugin install nota@yeste.studio</code></pre>
+            </li>
+            <li>
+              Ruby dependencies are bundled in the plugin and loaded automatically via
+              <code>bundler/setup</code> — no manual <code>bundle install</code> needed.
+            </li>
+          </ol>
+          <p>
+            Restart Claude Code so the MCP server picks up <code>VOYAGE_API_KEY</code> from your
+            environment.
+          </p>
+        </div>
+
+        <div class="tab-panel" id="tab-opencode">
+          <ol>
+            <li>
+              Add the plugin to your <code>opencode.json</code> (project or
+              <code>~/.config/opencode/opencode.json</code>):
+              <pre><code>{ "plugin": ["nota-plugin-for-opencode"] }</code></pre>
+            </li>
+            <li>
+              opencode installs the npm package automatically on startup. Then run
+              <code>bundle install</code> once in the installed package directory (the MCP server needs
+              the <code>mcp</code>, <code>sqlite3</code>, and <code>sqlite-vec</code> gems):
+              <pre><code>cd ~/.cache/opencode/node_modules/nota-plugin-for-opencode &amp;&amp; bundle install</code></pre>
+            </li>
+          </ol>
+          <p>
+            Restart opencode so the MCP server picks up <code>VOYAGE_API_KEY</code> from your
+            environment.
+          </p>
+        </div>
+      </div>
 
       <h3>Verify</h3>
       <p>
-        Run <code>/nota:setup</code> inside Claude Code to verify Ruby, the Voyage key, knowledge base
-        download and MCP server connectivity. Then say <strong>"hello musa"</strong> for the welcome
-        tour, or jump straight into <code>/nota:explain how does the sequencer work?</code>.
+        In Claude Code, run <code>/nota:setup</code>. In opencode, just ask
+        <em>"check the nota setup"</em> — the setup skill is model-invoked. Both verify Ruby, the
+        Voyage key, knowledge base download and MCP server connectivity. Then say
+        <strong>"hello musa"</strong> (or ask for a capabilities overview) for the welcome tour, or
+        jump straight into <code>/nota:explain how does the sequencer work?</code> in Claude Code.
       </p>
 
       <h3>What gets downloaded</h3>
@@ -309,8 +356,8 @@ description: Nota turns Claude Code into an algorithmic-composition assistant fo
       <h3>Repository</h3>
       <p>
         Source code and detailed README:
-        <a href="https://github.com/javier-sy/nota-plugin-for-claude" target="_blank" rel="noopener">
-          <ion-icon name="logo-github"></ion-icon> javier-sy/nota-plugin-for-claude
+        <a href="https://github.com/javier-sy/nota-plugin" target="_blank" rel="noopener">
+          <ion-icon name="logo-github"></ion-icon> javier-sy/nota-plugin
         </a>
       </p>
 
@@ -349,4 +396,4 @@ description: Nota turns Claude Code into an algorithmic-composition assistant fo
 <!-- Related Products Section -->
 {% include related-products.html %}
 <!-- Author Section -->
-{% include author.html product="Nota" family=true github="https://github.com/javier-sy/nota-plugin-for-claude" %}
+{% include author.html product="Nota" family=true github="https://github.com/javier-sy/nota-plugin" %}
