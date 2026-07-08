@@ -183,9 +183,9 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
     </div>
 
     <p style="margin-top: 1.5rem;">
-      The <code>/nota:</code> commands above are how Claude Code invokes these skills. In opencode, the
-      same skills are <strong>model-invoked</strong>: they trigger automatically based on your task
-      context (no slash command needed).
+      In both Claude Code and opencode, you can invoke any skill with <code>/nota:&lt;skill&gt;</code>
+      (e.g. <code>/nota:explain</code>), or simply describe your task and the model picks the right
+      skill automatically (<strong>model-invoked</strong> — no slash command needed).
     </p>
   </div>
 </section>
@@ -337,11 +337,11 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
 
       <h3>Verify</h3>
       <p>
-        In Claude Code, run <code>/nota:setup</code>. In opencode, just ask
-        <em>"check the nota setup"</em> — the setup skill is model-invoked. Both verify Ruby, the
-        Voyage key, knowledge base download and MCP server connectivity. Then say
+        Run <code>/nota:setup</code> in either harness (or just ask
+        <em>"check the nota setup"</em> — the setup skill is model-invoked in both). Both verify Ruby,
+        the Voyage key, knowledge base download and MCP server connectivity. Then say
         <strong>"hello musa"</strong> (or ask for a capabilities overview) for the welcome tour, or
-        jump straight into <code>/nota:explain how does the sequencer work?</code> in Claude Code.
+        jump straight into <code>/nota:explain how does the sequencer work?</code> in either harness.
       </p>
 
       <h3>What gets downloaded</h3>
