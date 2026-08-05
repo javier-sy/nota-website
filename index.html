@@ -290,14 +290,14 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
       <div class="tabs">
         <div class="tab-triggers">
           <button class="tab-trigger is-active" data-tab="claude-code">Claude Code</button>
-          <button class="tab-trigger" data-tab="opencode">opencode</button>
+          <button class="tab-trigger" data-tab="opencode">opencode (on hold)</button>
         </div>
 
         <div class="tab-panel is-active" id="tab-claude-code">
           <ol>
             <li>
-              Add the Nota marketplace to Claude Code:
-              <pre><code>/plugin marketplace add javier-sy/nota-plugin</code></pre>
+              Add the yeste.studio marketplace to Claude Code:
+              <pre><code>/plugin marketplace add javier-sy/claude-plugins</code></pre>
             </li>
             <li>
               Install the plugin:
@@ -315,17 +315,31 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
         </div>
 
         <div class="tab-panel" id="tab-opencode">
+          <div class="notice">
+            <strong class="notice__title">Temporarily unavailable</strong>
+            <p>
+              Nota 1.0 has not been published to npm: the package is being renamed to
+              <code>@yeste-studio/nota</code>, so that it reads the same on both channels. Until that
+              is done, <strong>1.0 is available for Claude Code only</strong>.
+            </p>
+            <p>
+              npm still serves the previous release under the old name
+              (<code>nota-plugin-for-opencode</code> 0.11.1) and it keeps working, but it is a version
+              behind. If you can wait, wait — this is a matter of days, not months.
+            </p>
+          </div>
+          <p>Once publication resumes, installing will be:</p>
           <ol>
             <li>
               Add the plugin to your <code>opencode.json</code> (project or
               <code>~/.config/opencode/opencode.json</code>):
-              <pre><code>{ "plugin": ["nota-plugin-for-opencode"] }</code></pre>
+              <pre><code>{ "plugin": ["@yeste-studio/nota"] }</code></pre>
             </li>
             <li>
               opencode installs the npm package automatically on startup. Then run
               <code>bundle install</code> once in the installed package directory (the MCP server needs
               the <code>mcp</code>, <code>sqlite3</code>, and <code>sqlite-vec</code> gems):
-              <pre><code>cd ~/.cache/opencode/node_modules/nota-plugin-for-opencode &amp;&amp; bundle install</code></pre>
+              <pre><code>cd ~/.cache/opencode/node_modules/@yeste-studio/nota &amp;&amp; bundle install</code></pre>
             </li>
           </ol>
           <p>
