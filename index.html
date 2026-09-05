@@ -277,14 +277,19 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
     <h2 class="section__title">Getting Started</h2>
     <div class="section__content install-steps">
 
-      <h3>Prerequisites (both harnesses)</h3>
+      <h3>Prerequisites</h3>
       <ul>
-        <li><a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">Ruby 3.1+</a> — the plugin's MCP server is Ruby.</li>
+        <li><a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">Ruby 3.1+</a> — the plugin's MCP server is Ruby, built for your platform.</li>
         <li>A <a href="https://dash.voyageai.com/" target="_blank" rel="noopener">Voyage AI</a> API key. The free tier is sufficient for personal use.</li>
         <li>Export the Voyage API key in your shell profile so the MCP server's subprocess inherits it:
           <pre><code>export VOYAGE_API_KEY="your-key-here"</code></pre>
         </li>
       </ul>
+
+      <p class="note">
+        <strong>Proven on macOS only.</strong> Linux and Windows should work — Windows from 1.0.2
+        on — but neither is confirmed.
+      </p>
 
       <h3>Install</h3>
       <div class="tabs">
@@ -304,14 +309,13 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
               <pre><code>/plugin install nota@yeste.studio</code></pre>
             </li>
             <li>
-              Ruby dependencies are bundled in the plugin and loaded automatically via
-              <code>bundler/setup</code> — no manual <code>bundle install</code> needed.
+              Restart Claude Code so the MCP server starts and picks up <code>VOYAGE_API_KEY</code>
+              from your environment. On that first run the server installs its own Ruby
+              dependencies — seven gems into <code>~/.config/nota/bundle</code>, about five
+              seconds — before it comes up. Your own Ruby is not touched, and nothing else is
+              asked of you.
             </li>
           </ol>
-          <p>
-            Restart Claude Code so the MCP server picks up <code>VOYAGE_API_KEY</code> from your
-            environment.
-          </p>
         </div>
 
         <div class="tab-panel" id="tab-opencode">
@@ -336,35 +340,31 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
               <pre><code>{ "plugin": ["@yeste-studio/nota"] }</code></pre>
             </li>
             <li>
-              opencode installs the npm package automatically on startup. Then run
-              <code>bundle install</code> once in the installed package directory (the MCP server needs
-              the <code>mcp</code>, <code>sqlite3</code>, and <code>sqlite-vec</code> gems):
-              <pre><code>cd ~/.cache/opencode/node_modules/@yeste-studio/nota &amp;&amp; bundle install</code></pre>
+              opencode installs the npm package automatically on startup. Restart opencode so the
+              MCP server starts and picks up <code>VOYAGE_API_KEY</code> from your environment; on
+              that first run the server installs its own Ruby dependencies — seven gems into
+              <code>~/.config/nota/bundle</code>, about five seconds — before it comes up. Your own
+              Ruby is not touched.
             </li>
           </ol>
-          <p>
-            Restart opencode so the MCP server picks up <code>VOYAGE_API_KEY</code> from your
-            environment.
-          </p>
         </div>
       </div>
 
       <h3>Verify</h3>
       <p>
-        Run <code>/nota:setup</code> in either harness (or just ask
-        <em>"check the nota setup"</em> — the setup skill is model-invoked in both). Both verify Ruby,
-        the Voyage key, knowledge base download and MCP server connectivity. Then say
-        <strong>"hello musa"</strong> (or ask for a capabilities overview) for the welcome tour, or
-        jump straight into <code>/nota:explain how does the sequencer work?</code> in either harness.
+        Run <code>/nota:setup</code>, or just ask <em>"check the nota setup"</em>. It reports Ruby,
+        the Voyage key, the knowledge base and the MCP server, and names whatever is missing. Then
+        say <strong>"hello musa"</strong> for the welcome tour, or go straight to
+        <code>/nota:explain how does the sequencer work?</code>
       </p>
 
       <h3>What gets downloaded</h3>
       <p>
-        On first session start, Nota downloads the latest <code>knowledge.db</code> (a few MB of
-        MusaDSL documentation, API reference, demos and best practices, all pre-indexed with their
-        Voyage embeddings). Your <code>private.db</code> is created empty under
-        <code>~/.config/nota/</code> the first time you use <code>/nota:index</code> or
-        <code>/nota:analyze</code>; nothing private leaves your machine.
+        On first session start, Nota downloads the latest <code>knowledge.db</code> — a few MB of
+        MusaDSL documentation, API reference, demos and best practices, pre-indexed with their
+        Voyage embeddings — and the 200 KB <code>sqlite-vec</code> extension the databases run on.
+        Your <code>private.db</code> is created empty under <code>~/.config/nota/</code> the first
+        time you index a work of your own; nothing private leaves your machine.
       </p>
 
       <h3>Repository</h3>
@@ -397,11 +397,37 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
             <td>The plugin may not have indexed your local works yet — run <code>/nota:index</code> on the project root.</td>
           </tr>
           <tr>
+            <td><code>Could not find mcp-…</code> / <code>sqlite3-…</code> in locally installed gems</td>
+            <td>The server installs them on startup and retries every time it starts, so reopen
+              the session first. If it keeps failing, run the <code>bundle install --gemfile …</code>
+              above by hand.</td>
+          </tr>
+          <tr>
+            <td>The sqlite-vec extension did not download</td>
+            <td>The knowledge base cannot open without it. Check internet connectivity and reopen the
+              session; <code>/nota:setup</code> reports the path it resolved and retries.</td>
+          </tr>
+          <tr>
+            <td><code>Missing environment variables: HOME</code>, and no Nota tools available</td>
+            <td>Nota 1.0.1 and earlier on Windows. Update the plugin — 1.0.2 no longer asks the harness
+              where your home directory is.</td>
+          </tr>
+          <tr>
             <td>MCP server connection failing</td>
-            <td>Check <code>~/.config/nota/</code> permissions; <code>/nota:setup</code> diagnoses it.</td>
+            <td>Run <code>/nota:setup</code>: it reports the Ruby side, the key, the extension and both
+              databases, and names which one is missing.</td>
           </tr>
         </tbody>
       </table>
+
+      <p>
+        <strong>If installation fails on your platform, please tell me</strong> — especially on
+        Linux or Windows. Open an issue at
+        <a href="https://github.com/javier-sy/nota-plugin/issues" target="_blank" rel="noopener">
+          <ion-icon name="logo-github"></ion-icon> javier-sy/nota-plugin</a>
+        with your operating system, the output of <code>ruby -v</code>, and what
+        <code>/nota:setup</code> reports.
+      </p>
 
     </div>
   </div>
