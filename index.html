@@ -281,17 +281,71 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
       <ul>
         <li><a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">Ruby 3.1+</a> — the plugin's MCP server is Ruby, built for your platform.</li>
         <li>A <a href="https://dash.voyageai.com/" target="_blank" rel="noopener">Voyage AI</a> API key. The free tier is sufficient for personal use.</li>
-        <li>Export the Voyage API key in your shell profile so the MCP server's subprocess inherits it:
-          <pre><code>export VOYAGE_API_KEY="your-key-here"</code></pre>
-        </li>
       </ul>
 
       <p class="note">
-        <strong>Proven on macOS only.</strong> Linux and Windows should work — Windows from 1.0.2
-        on, and with a Ruby built for <strong>x64</strong> — but neither is confirmed.
+        <strong>Proven on macOS and on Windows</strong>, the latter with a Ruby built for
+        <strong>x64</strong> and from 1.0.3 on. Linux should work but is not confirmed.
       </p>
 
+      <style>
+        /* The three install steps need to read as three, not as one wall. */
+        .install-steps h4 { margin-top: 56px; }
+        .install-steps h3 + h4 { margin-top: 24px; }
+      </style>
+
       <h3>Install</h3>
+
+      <h4>1. Add your API key</h4>
+      <p>
+        Nota's MCP server runs as a subprocess of your coding agent, and inherits the environment of
+        whatever launched it. Set the key in two places: the session you have open now, and every
+        session from now on.
+      </p>
+
+      <div class="tabs">
+        <div class="tab-triggers">
+          <button class="tab-trigger is-active" data-tab="key-macos">macOS</button>
+          <button class="tab-trigger" data-tab="key-linux">Linux</button>
+          <button class="tab-trigger" data-tab="key-windows">Windows</button>
+        </div>
+
+        <div class="tab-panel is-active" id="tab-key-macos">
+          <pre><code># this session
+export VOYAGE_API_KEY="your-key-here"
+
+# every session from now on
+echo 'export VOYAGE_API_KEY="your-key-here"' &gt;&gt; ~/.zshrc</code></pre>
+          <p class="note">zsh, the default on macOS. Under bash, the second line goes to <code>~/.bash_profile</code>.</p>
+        </div>
+
+        <div class="tab-panel" id="tab-key-linux">
+          <pre><code># this session
+export VOYAGE_API_KEY="your-key-here"
+
+# every session from now on
+echo 'export VOYAGE_API_KEY="your-key-here"' &gt;&gt; ~/.bashrc</code></pre>
+          <p class="note">bash, the usual default. Under zsh, the second line goes to <code>~/.zshrc</code>.</p>
+        </div>
+
+        <div class="tab-panel" id="tab-key-windows">
+          <p class="note">PowerShell</p>
+          <pre><code># this session
+$env:VOYAGE_API_KEY = 'your-key-here'
+
+# every session from now on
+[Environment]::SetEnvironmentVariable('VOYAGE_API_KEY', 'your-key-here', 'User')</code></pre>
+
+          <p class="note">cmd</p>
+          <pre><code>:: this session
+set VOYAGE_API_KEY=your-key-here
+
+:: every session from now on
+setx VOYAGE_API_KEY "your-key-here"</code></pre>
+        </div>
+      </div>
+
+      <h4>2. Install the plugin</h4>
       <div class="tabs">
         <div class="tab-triggers">
           <button class="tab-trigger is-active" data-tab="claude-code">Claude Code</button>
@@ -301,19 +355,12 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
         <div class="tab-panel is-active" id="tab-claude-code">
           <ol>
             <li>
-              Add the yeste.studio marketplace to Claude Code:
+              Add the yeste.studio marketplace:
               <pre><code>/plugin marketplace add javier-sy/claude-plugins</code></pre>
             </li>
             <li>
               Install the plugin:
               <pre><code>/plugin install nota@yeste.studio</code></pre>
-            </li>
-            <li>
-              Restart Claude Code so the MCP server starts and picks up <code>VOYAGE_API_KEY</code>
-              from your environment. On that first run the server installs its own Ruby
-              dependencies — seven gems into <code>~/.config/nota/bundle</code>, about five
-              seconds — before it comes up. Your own Ruby is not touched, and nothing else is
-              asked of you.
             </li>
           </ol>
         </div>
@@ -324,31 +371,32 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
             <p>
               Nota 1.0 has not been published to npm: the package is being renamed to
               <code>@yeste-studio/nota</code>, so that it reads the same on both channels. Until that
-              is done, <strong>1.0 is available for Claude Code only</strong>.
-            </p>
-            <p>
-              npm still serves the previous release under the old name
-              (<code>nota-plugin-for-opencode</code> 0.11.1) and it keeps working, but it is a version
-              behind. If you can wait, wait — this is a matter of days, not months.
+              is done, <strong>1.0 is available for Claude Code only</strong>. npm still serves the
+              previous release under the old name (<code>nota-plugin-for-opencode</code> 0.11.1),
+              which works but is a version behind.
             </p>
           </div>
-          <p>Once publication resumes, installing will be:</p>
+          <p>Once publication resumes, installing will be one step:</p>
           <ol>
             <li>
               Add the plugin to your <code>opencode.json</code> (project or
-              <code>~/.config/opencode/opencode.json</code>):
+              <code>~/.config/opencode/opencode.json</code>); opencode installs the npm package
+              itself on startup:
               <pre><code>{ "plugin": ["@yeste-studio/nota"] }</code></pre>
-            </li>
-            <li>
-              opencode installs the npm package automatically on startup. Restart opencode so the
-              MCP server starts and picks up <code>VOYAGE_API_KEY</code> from your environment; on
-              that first run the server installs its own Ruby dependencies — seven gems into
-              <code>~/.config/nota/bundle</code>, about five seconds — before it comes up. Your own
-              Ruby is not touched.
             </li>
           </ol>
         </div>
       </div>
+
+      <h4>3. Reopen</h4>
+      <p>
+        Restart Claude Code or opencode from a terminal that has the key.
+      </p>
+      <p>
+        On that first run the MCP server installs its own Ruby dependencies before it comes up —
+        seven gems, about five seconds, into <code>.config/nota/bundle</code> in your home
+        directory. Your own Ruby installation is not touched.
+      </p>
 
       <h3>Verify</h3>
       <p>
@@ -386,7 +434,8 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
         <tbody>
           <tr>
             <td><code>/nota:setup</code> says Voyage key missing</td>
-            <td>Re-source your shell profile, or restart Claude Code so it inherits the updated env.</td>
+            <td>The key is not in the environment your agent was launched from. Set it, then reopen
+              Claude Code or opencode from a terminal that has it.</td>
           </tr>
           <tr>
             <td>Knowledge base did not download</td>
@@ -416,8 +465,8 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
           </tr>
           <tr>
             <td><code>Missing environment variables: HOME</code>, and no Nota tools available</td>
-            <td>Nota 1.0.1 and earlier on Windows. Update the plugin — 1.0.2 no longer asks the harness
-              where your home directory is.</td>
+            <td>Nota 1.0.1 and earlier on Windows. Update the plugin — 1.0.2 no longer asks the
+              editor where your home directory is.</td>
           </tr>
           <tr>
             <td>MCP server connection failing</td>
