@@ -288,7 +288,7 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
 
       <p class="note">
         <strong>Proven on macOS only.</strong> Linux and Windows should work — Windows from 1.0.2
-        on — but neither is confirmed.
+        on, and with a Ruby built for <strong>x64</strong> — but neither is confirmed.
       </p>
 
       <h3>Install</h3>
@@ -401,6 +401,13 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
             <td>The server installs them on startup and retries every time it starts, so reopen
               the session first. If it keeps failing, run the <code>bundle install --gemfile …</code>
               above by hand.</td>
+          </tr>
+          <tr>
+            <td>The session says the platform is not supported</td>
+            <td>Windows on ARM: neither <code>sqlite3</code> nor <code>sqlite-vec</code> publishes a
+              build for it. Install a Ruby built for x64 — Windows runs it under emulation — and
+              set <code>NOTA_RUBY</code> to its <code>ruby.exe</code> so your other Ruby work keeps
+              the interpreter you have.</td>
           </tr>
           <tr>
             <td>The sqlite-vec extension did not download</td>
