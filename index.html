@@ -213,9 +213,9 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
             <td><strong><code>knowledge.db</code></strong></td>
             <td>
               MusaDSL documentation, API reference, 23 demo projects, 23 built-in composition best
-              practices. <strong>Auto-downloaded</strong> on first session start.
+              practices.
             </td>
-            <td>Shipped with the plugin, refreshed when the plugin updates.</td>
+            <td>Downloaded to <code>~/.config/nota/</code>, refreshed when a new index is published.</td>
           </tr>
           <tr>
             <td><strong><code>private.db</code></strong></td>
@@ -451,9 +451,9 @@ setx VOYAGE_API_KEY "your-key-here"</code></pre>
           </tr>
           <tr>
             <td><code>Could not find mcp-…</code> / <code>sqlite3-…</code> in locally installed gems</td>
-            <td>The server installs them on startup and retries every time it starts, so reopen
-              the session first. If it keeps failing, run the <code>bundle install --gemfile …</code>
-              above by hand.</td>
+            <td>The knowledge base server says this and stops, which is what it is meant to do:
+              the gems are installed by <code>/nota:setup</code>, not on startup. Run it, then
+              reload plugins.</td>
           </tr>
           <tr>
             <td>The session says the platform is not supported</td>
