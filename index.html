@@ -410,13 +410,12 @@ setx VOYAGE_API_KEY "your-key-here"</code></pre>
 
       <h3>What gets downloaded</h3>
       <p>
-        Everything lands in <code>~/.config/nota/</code>, in the order it is needed.
-        <code>/nota:setup</code> brings the Ruby dependencies the knowledge base runs on and the
-        200 KB <code>sqlite-vec</code> extension. The first question you ask brings the latest
-        <code>knowledge.db</code> — a few MB of MusaDSL documentation, API reference, demos and
-        best practices, pre-indexed with their Voyage embeddings. Your <code>private.db</code> is
-        created empty the first time you index a work of your own; nothing private leaves your
-        machine.
+        Everything lands in <code>~/.config/nota/</code>, and <code>/nota:setup</code> brings all
+        of it: the Ruby dependencies the knowledge base runs on, the 200 KB
+        <code>sqlite-vec</code> extension, and the latest <code>knowledge.db</code> — MusaDSL
+        documentation, API reference, demos and best practices, pre-indexed with their Voyage
+        embeddings. Your <code>private.db</code> is created empty the first time you index a work
+        of your own; nothing private leaves your machine.
       </p>
 
       <h3>Repository</h3>
