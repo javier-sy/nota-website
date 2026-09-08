@@ -388,29 +388,34 @@ setx VOYAGE_API_KEY "your-key-here"</code></pre>
         </div>
       </div>
 
-      <h4>3. Reopen</h4>
+      <h4>3. Run <code>/nota:setup</code></h4>
       <p>
-        Restart Claude Code or opencode from a terminal that has the key.
+        Restart Claude Code or opencode from a terminal that has the key, and run:
+      </p>
+      <pre><code>/nota:setup</code></pre>
+      <p>
+        It reports what is still missing and installs it: the Ruby dependencies the knowledge base
+        runs on, into <code>.config/nota/</code> in your home directory, and the
+        <code>sqlite-vec</code> extension. About 30 MB and a few seconds, once. Your own Ruby
+        installation is not touched.
       </p>
       <p>
-        On that first run the MCP server installs its own Ruby dependencies before it comes up —
-        seven gems, about five seconds, into <code>.config/nota/bundle</code> in your home
-        directory. Your own Ruby installation is not touched.
+        Until you have run it, <code>/nota:setup</code> tells you what it needs and the other
+        commands say they are not ready yet — rather than answering without the knowledge base.
       </p>
 
-      <h3>Verify</h3>
+      <h3>First questions</h3>
       <p>
-        Run <code>/nota:setup</code>, or just ask <em>"check the nota setup"</em>. It reports Ruby,
-        the Voyage key, the knowledge base and the MCP server, and names whatever is missing. Then
-        say <strong>"hello musa"</strong> for the welcome tour, or go straight to
+        Say <strong>"hello musa"</strong> for the welcome tour, or go straight to
         <code>/nota:explain how does the sequencer work?</code>
       </p>
 
       <h3>What gets downloaded</h3>
       <p>
-        On first session start, Nota downloads the latest <code>knowledge.db</code> — a few MB of
+        The first question you ask brings down the latest <code>knowledge.db</code> — a few MB of
         MusaDSL documentation, API reference, demos and best practices, pre-indexed with their
-        Voyage embeddings — and the 200 KB <code>sqlite-vec</code> extension the databases run on.
+        Voyage embeddings. The 200 KB <code>sqlite-vec</code> extension the databases run on comes
+        with <code>/nota:setup</code>.
         Your <code>private.db</code> is created empty under <code>~/.config/nota/</code> the first
         time you index a work of your own; nothing private leaves your machine.
       </p>
