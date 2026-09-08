@@ -289,7 +289,7 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
       </p>
 
       <style>
-        /* The three install steps need to read as three, not as one wall. */
+        /* The install steps need to read as steps, not as one wall. */
         .install-steps h4 { margin-top: 56px; }
         .install-steps h3 + h4 { margin-top: 24px; }
       </style>
@@ -355,6 +355,10 @@ setx VOYAGE_API_KEY "your-key-here"</code></pre>
         <div class="tab-panel is-active" id="tab-claude-code">
           <ol>
             <li>
+              Start Claude Code from the terminal where you set the key:
+              <pre><code>claude</code></pre>
+            </li>
+            <li>
               Add the yeste.studio marketplace:
               <pre><code>/plugin marketplace add javier-sy/claude-plugins</code></pre>
             </li>
@@ -362,45 +366,37 @@ setx VOYAGE_API_KEY "your-key-here"</code></pre>
               Install the plugin:
               <pre><code>/plugin install nota@yeste.studio</code></pre>
             </li>
+            <li>
+              Finish the setup:
+              <pre><code>/nota:setup</code></pre>
+              <p>
+                It reports what is still missing and installs it — about 30 MB, once. Your own
+                Ruby is not touched.
+              </p>
+            </li>
+            <li>
+              Leave Claude Code. The knowledge base server only starts with a new session:
+              <pre><code>/exit</code></pre>
+            </li>
+            <li>
+              Come back to the same conversation:
+              <pre><code>claude --continue</code></pre>
+            </li>
           </ol>
         </div>
 
         <div class="tab-panel" id="tab-opencode">
           <div class="notice">
-            <strong class="notice__title">Temporarily unavailable</strong>
+            <strong class="notice__title">On hold</strong>
             <p>
-              Nota 1.0 has not been published to npm: the package is being renamed to
-              <code>@yeste-studio/nota</code>, so that it reads the same on both channels. Until that
-              is done, <strong>1.0 is available for Claude Code only</strong>. npm still serves the
-              previous release under the old name (<code>nota-plugin-for-opencode</code> 0.11.1),
-              which works but is a version behind.
+              <strong>Nota is available for Claude Code only.</strong> The opencode channel is on
+              hold: npm serves an old release under the previous name
+              (<code>nota-plugin-for-opencode</code> 0.11.1), from before most of what Nota does
+              now.
             </p>
           </div>
-          <p>Once publication resumes, installing will be one step:</p>
-          <ol>
-            <li>
-              Add the plugin to your <code>opencode.json</code> (project or
-              <code>~/.config/opencode/opencode.json</code>); opencode installs the npm package
-              itself on startup:
-              <pre><code>{ "plugin": ["@yeste-studio/nota"] }</code></pre>
-            </li>
-          </ol>
         </div>
       </div>
-
-      <h4>3. Finish the setup</h4>
-      <p>
-        Restart Claude Code or opencode from a terminal that has the key, and run:
-      </p>
-      <pre><code>/nota:setup</code></pre>
-      <p>
-        It reports what is still missing and installs it — about 30 MB and a few seconds, once.
-        Your own Ruby installation is not touched.
-      </p>
-      <p>
-        Before that, the other commands say they are not ready rather than answering without the
-        knowledge base.
-      </p>
 
       <h3>First questions</h3>
       <p>
@@ -452,7 +448,8 @@ setx VOYAGE_API_KEY "your-key-here"</code></pre>
             <td><code>Could not find mcp-…</code> / <code>sqlite3-…</code> in locally installed gems</td>
             <td>The knowledge base server says this and stops, which is what it is meant to do:
               the gems are installed by <code>/nota:setup</code>, not on startup. Run it, then
-              reload plugins.</td>
+              start Claude Code again — <code>claude --continue</code> keeps the conversation.
+              Reloading plugins does not restart an MCP server.</td>
           </tr>
           <tr>
             <td>The session says the platform is not supported</td>
