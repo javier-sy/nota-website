@@ -277,15 +277,17 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
     <h2 class="section__title">Getting Started</h2>
     <div class="section__content install-steps">
 
-      <h3>Prerequisites</h3>
+      <h3 id="prerequisites">Requisites</h3>
       <ul>
-        <li><a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">Ruby 3.1+</a> — the plugin's MCP server is Ruby, built for your platform.</li>
-        <li>A <a href="https://dash.voyageai.com/" target="_blank" rel="noopener">Voyage AI</a> API key. The free tier is sufficient for personal use.</li>
+        <li><a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">Ruby 3.1+</a>, built for the architecture you are running on — the knowledge base server is Ruby.</li>
+        <li>A <a href="https://dash.voyageai.com/" target="_blank" rel="noopener">Voyage AI</a> API key, for the embeddings. The free tier is enough for personal use.</li>
+        <li><code>sqlite3</code> and <code>sqlite-vec</code> available for that Ruby. This is the one real constraint, and it is upstream's: <code>sqlite-vec</code> publishes a Windows build for x64 and none for ARM, so a Ruby reporting <code>aarch64-mingw-ucrt</code> cannot open the knowledge base. See <a href="#troubleshooting">Troubleshooting</a>.</li>
+        <li>Network access, once. Installing the plugin downloads nothing; <code>/nota:setup</code> fetches the rest.</li>
       </ul>
 
       <p class="note">
-        <strong>Proven on macOS and on Windows</strong>, the latter with a Ruby built for
-        <strong>x64</strong> and from 1.0.3 on. Linux should work but is not confirmed.
+        <code>/nota:setup</code> checks all four and names the one that is missing, so this
+        list is where to look when it does.
       </p>
 
       <style>
@@ -294,7 +296,7 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
         .install-steps h3 + h4 { margin-top: 24px; }
       </style>
 
-      <h3>Install</h3>
+      <h3 id="install">Install</h3>
 
       <h4>1. Add your API key</h4>
       <p>
@@ -398,13 +400,13 @@ setx VOYAGE_API_KEY "your-key-here"</code></pre>
         </div>
       </div>
 
-      <h3>First questions</h3>
+      <h3 id="first-questions">First questions</h3>
       <p>
         Say <strong>"hello musa"</strong> for the welcome tour, or go straight to
         <code>/nota:explain how does the sequencer work?</code>
       </p>
 
-      <h3>What gets downloaded</h3>
+      <h3 id="what-gets-downloaded">What gets downloaded</h3>
       <p>
         Everything lands in <code>~/.config/nota/</code>, and <code>/nota:setup</code> brings all
         of it: the Ruby dependencies the knowledge base runs on, the 200 KB
@@ -414,7 +416,7 @@ setx VOYAGE_API_KEY "your-key-here"</code></pre>
         of your own; nothing private leaves your machine.
       </p>
 
-      <h3>Repository</h3>
+      <h3 id="repository">Repository</h3>
       <p>
         Detailed README and the knowledge base releases:
         <a href="https://github.com/javier-sy/nota" target="_blank" rel="noopener">
@@ -422,7 +424,7 @@ setx VOYAGE_API_KEY "your-key-here"</code></pre>
         </a>
       </p>
 
-      <h3>Troubleshooting</h3>
+      <h3 id="troubleshooting">Troubleshooting</h3>
       <table class="libraries-table">
         <thead>
           <tr>
