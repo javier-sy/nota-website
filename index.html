@@ -279,15 +279,13 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
 
       <h3 id="prerequisites">Requisites</h3>
       <ul>
-        <li><a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">Ruby 3.1+</a>, built for the architecture you are running on — the knowledge base server is Ruby.</li>
+        <li><a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">Ruby 3.1+</a> — the knowledge base server is Ruby.</li>
         <li>A <a href="https://dash.voyageai.com/" target="_blank" rel="noopener">Voyage AI</a> API key, for the embeddings. The free tier is enough for personal use.</li>
-        <li><code>sqlite3</code> and <code>sqlite-vec</code> available for that Ruby. This is the one real constraint, and it is upstream's: <code>sqlite-vec</code> publishes a Windows build for x64 and none for ARM, so a Ruby reporting <code>aarch64-mingw-ucrt</code> cannot open the knowledge base. See <a href="#troubleshooting">Troubleshooting</a>.</li>
-        <li>Network access, once. Installing the plugin downloads nothing; <code>/nota:setup</code> fetches the rest.</li>
+        <li>macOS or Windows. On Windows on ARM, use an <strong>x64</strong> Ruby — see <a href="#troubleshooting">Troubleshooting</a>.</li>
       </ul>
 
       <p class="note">
-        <code>/nota:setup</code> checks all four and names the one that is missing, so this
-        list is where to look when it does.
+        <code>/nota:setup</code> checks all three and names the one that is missing.
       </p>
 
       <style>
@@ -416,23 +414,20 @@ setx VOYAGE_API_KEY "your-key-here"</code></pre>
         of your own; nothing private leaves your machine.
       </p>
 
-      <h3 id="licence">Licence</h3>
-      <p>
-        Nota is <strong>free of charge and proprietary</strong>: it is licensed to be used, on
-        any machine and for any purpose including professional work, and not to be copied,
-        modified or redistributed. The terms travel with the plugin, in its
-        <code>LICENSE</code> file.
-      </p>
-      <p>
-        <strong>What you compose with Nota is yours</strong>, without condition — code, scores,
-        recordings, analyses — whether you wrote it or the assistant did. The licence asks
-        nothing in return and places no restriction on what you do with your work.
-      </p>
-      <p>
-        <a href="https://musadsl.yeste.studio" target="_blank" rel="noopener">MusaDSL</a> itself
-        is free software, LGPL 3.0, and is unaffected. So is the knowledge base, which follows
-        the framework's terms.
-      </p>
+      <h3 id="license">License</h3>
+      <ul>
+        <li><strong>Free of charge.</strong> Install it and use it, on as many machines as you
+          like, for anything — including professional and commercial work.</li>
+        <li><strong>What you make with Nota is yours.</strong> Code, scores, recordings,
+          analyses: no condition on how you license, publish, perform or sell them, and nothing
+          owed in return, whether you wrote it or the assistant did.</li>
+        <li><strong>The source is not open.</strong> Nota is licensed to be used, not copied,
+          modified or redistributed. The terms ship with the plugin, in its <code>LICENSE</code>
+          file.</li>
+        <li><strong>MusaDSL is free software</strong>
+          (<a href="https://musadsl.yeste.studio" target="_blank" rel="noopener">LGPL 3.0</a>),
+          and so is the knowledge base. Only the assistant is licensed differently.</li>
+      </ul>
 
       <h3 id="repository">Repository</h3>
       <p>
