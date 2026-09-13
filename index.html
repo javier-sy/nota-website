@@ -12,7 +12,7 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
     <div class="hero__meta">
       <div class="meta-item">
         <ion-icon name="sparkles-outline"></ion-icon>
-        <span>10 interactive skills</span>
+        <span>11 interactive skills</span>
       </div>
       <div class="meta-item">
         <ion-icon name="library-outline"></ion-icon>
@@ -30,6 +30,52 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
   </div>
 </section>
 
+<!-- Demo Section -->
+<section id="demo" class="content-section">
+  <div class="container">
+    <h2 class="section__title">Two minutes of Nota</h2>
+    <div class="section__content">
+      <p>
+        A short piece in the manner of the young Mozart, from the musical intention to the
+        sounding result, composed with MusaDSL and Nota. <strong>The video has sound — unmute it.</strong>
+      </p>
+    </div>
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/kJHZCB3SrAE?autoplay=1&amp;mute=1&amp;playsinline=1&amp;rel=0"
+          title="Demo MusaDSL + Nota: a piece in the manner of the young Mozart"
+          loading="lazy"
+          allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+  </div>
+  <style>
+    /* The player keeps 16:9 at every width; the page never scrolls sideways for it. */
+    /* It is a screen recording: the text in it has to be readable, so the player
+       breaks out of the 800 px reading column. As wide as the viewport allows,
+       capped so that 16:9 still fits on screen without scrolling. */
+    .video-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      width: min(96vw, 1400px, calc((100vh - 200px) * 16 / 9));
+      margin: 1.5rem auto 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+    }
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</section>
+
 <!-- About Section -->
 <section id="about" class="content-section">
   <div class="container">
@@ -38,13 +84,13 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
       <p>
         <strong>Nota</strong> transforms your AI coding agent — <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a> or <a href="https://opencode.ai" target="_blank" rel="noopener">opencode</a> —
         into an algorithmic-composition assistant with deep knowledge of the
-        <a href="https://musadsl.yeste.studio">MusaDSL</a> framework. Ten interactive skills cover the
+        <a href="https://musadsl.yeste.studio">MusaDSL</a> framework. Eleven interactive skills cover the
         entire creative process — from understanding the framework, through brainstorming ideas, to
         writing verified code, analyzing the results, and consolidating best practices.
       </p>
       <p>
-        Everything is backed by a knowledge base with MusaDSL documentation, API reference, 23 demo
-        projects, 23 built-in composition best practices, and — optionally — your own compositions and
+        Everything is backed by a knowledge base with MusaDSL documentation, API reference, the demo
+        projects, built-in composition best practices, and — optionally — your own compositions and
         their musical analyses.
       </p>
       <p>
@@ -56,7 +102,7 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
       <ul>
         <li>Composers learning MusaDSL — ask questions in natural language, get sourced answers.</li>
         <li>Working algorithmic composers — describe a musical intention, get verified code.</li>
-        <li>Researchers — build a searchable knowledge base of your own compositions and analyses.</li>
+        <li>Artist-researchers — think, write, listen and reflect in one place, so that what each piece teaches you gets written down as it happens, in your own terms, and the next piece starts from it.</li>
         <li>Anyone exploring computer music who wants their AI coding agent to be domain-aware rather than guessing.</li>
       </ul>
     </div>
@@ -518,4 +564,4 @@ setx VOYAGE_API_KEY "your-key-here"</code></pre>
 <!-- Related Products Section -->
 {% include related-products.html %}
 <!-- Author Section -->
-{% include author.html product="Nota" family=true github="https://github.com/javier-sy/nota" %}
+{% include author.html product="Nota" family=true license="Free of charge · Proprietary" github="https://github.com/javier-sy/nota" github_label="Issues and knowledge base releases on" %}
