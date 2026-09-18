@@ -1,8 +1,7 @@
 #-------------------------------
 # Site Settings
 title: Nota
-logo: # You can add own logo. For example '/images/logo.png'.
-author: Javier Sánchez Yeste
+author: yeste.studio
 description: Nota — AI coding plugin (Claude Code & opencode) for algorithmic composition with MusaDSL
 
 #-------------------------------
