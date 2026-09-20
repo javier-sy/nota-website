@@ -92,7 +92,12 @@ distribución y transformación de los referidos elementos protegidos, salvo con
 del titular del sitio web.
 
 El software Nota es gratuito y se distribuye bajo una licencia propietaria: se licencia para usarlo, no para copiarlo,
-modificarlo ni redistribuirlo. Lo que el usuario componga con él es suyo, sin condición.
+modificarlo ni redistribuirlo. Lo que el usuario cree con él es suyo, sin condición por parte de Nota; el código que
+use MusaDSL sigue la licencia de MusaDSL como cualquier otro: componer con él no obliga a nada, y distribuir software
+construido sobre él supone la GPL o una licencia comercial de yeste.studio.
+
+**Licencia comercial.** Si necesitas Nota en condiciones que su licencia no cubre (por ejemplo, dentro de un producto
+cerrado), yeste.studio ofrece una licencia comercial: [javier@yeste.studio](mailto:javier@yeste.studio).
 
 [nota.yeste.studio](https://nota.yeste.studio) puede utilizar fuentes externas para la elaboración de sus contenidos y establecer links o
 hiperenlaces a artículos o informaciones de terceros citando siempre la fuente. El legítimo titular de los
