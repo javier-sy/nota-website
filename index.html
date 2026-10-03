@@ -50,38 +50,6 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
   </div>
-  <style>
-    /* The player keeps 16:9 at every width; the page never scrolls sideways for it. */
-    /* It is a screen recording: the text in it has to be readable, so the player
-       breaks out of the 800 px reading column. As wide as the viewport allows,
-       capped so that 16:9 still fits on screen without scrolling. */
-    .video-frame {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      width: min(96vw, 1400px);
-      margin: 1.5rem auto 0;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 8px;
-      overflow: hidden;
-      background: #000;
-    }
-    .video-frame iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    /* Only a tall screen gets the height cap. On a phone held sideways the
-       viewport is a few hundred pixels high, and capping by height there
-       shrank the player to a stamp instead of letting it take the width. */
-    @media (min-height: 700px) {
-      .video-frame {
-        width: min(96vw, 1400px, calc((100vh - 200px) * 16 / 9));
-      }
-    }
-  </style>
 </section>
 
 <!-- About Section -->
@@ -348,11 +316,6 @@ description: Nota turns your AI coding agent (Claude Code or opencode) into an a
       </ul>
 
 
-      <style>
-        /* The install steps need to read as steps, not as one wall. */
-        .install-steps h4 { margin-top: 56px; }
-        .install-steps h3 + h4 { margin-top: 24px; }
-      </style>
 
       <h3 id="install">Install</h3>
 
