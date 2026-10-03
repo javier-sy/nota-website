@@ -8,13 +8,16 @@ description: Nota — AI coding plugin (Claude Code & opencode) for algorithmic 
 # and feed on yeste.studio.
 news_topic: nota
 
+# First year of the copyright notice in the footer (the theme's default is 2024)
+copyright_since: 2025
+
 #-------------------------------
 # Menu: built by the theme from _sections (Home, every section with a `menu` label, News, Author)
 
 #-------------------------------
 # Footer Settings
 social:
-  - {icon: "logo-github", color: "#24292e", label: Github, link: "https://github.com/javier-sy"}
+  - {icon: "logo-github", color: "#24292e", label: GitHub, link: "https://github.com/javier-sy"}
 
 #-------------------------------
 # Contact Settings

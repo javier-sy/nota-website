@@ -9,7 +9,7 @@ every skill ground its output in concrete sources rather than the model's genera
 
 | Database | Scope | Storage |
 |---|---|---|
-| **`knowledge.db`** | [MusaDSL](https://musadsl.yeste.studio) documentation, API reference, 23 demo projects, 23 built-in composition best practices. | Downloaded to `~/.config/nota/`, refreshed when a new index is published. |
+| **`knowledge.db`** | [MusaDSL](https://musadsl.yeste.studio) documentation, API reference, the demo projects, built-in composition best practices. | Downloaded to `~/.config/nota/`, refreshed when a new index is published. |
 | **`private.db`** | Your indexed compositions (added with `/nota:index`), their musical analyses (created with `/nota:analyze`), and your custom best practices (`/nota:best-practices`). Search across them as easily as the public docs. | Local, in `~/.config/nota/`. Never leaves your machine. |
 {: .libraries-table}
 

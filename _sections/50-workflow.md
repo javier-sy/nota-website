@@ -14,11 +14,11 @@ enriches the assistant for the next one:
 back to `/nota:think`
 {: .flow-line}
 
-- **Think** — explore ideas across the inspiration dimensions, informed by your past work.
-- **Code** — turn the idea into verified [MusaDSL](https://musadsl.yeste.studio) code, consulting docs, demos and best practices.
-- **Index** — add the finished composition to your private knowledge base.
-- **Analyze** — generate a structured musical analysis of the work.
-- **Best-practices** — extract recurring patterns from your analyses into reusable practices.
-- **Think** again — now your future ideation draws from a richer corpus.
+- **Think** - explore ideas across the inspiration dimensions, informed by your past work.
+- **Code** - turn the idea into verified [MusaDSL](https://musadsl.yeste.studio) code, consulting docs, demos and best practices.
+- **Index** - add the finished composition to your private knowledge base.
+- **Analyze** - generate a structured musical analysis of the work.
+- **Best-practices** - extract recurring patterns from your analyses into reusable practices.
+- **Think** again - now your future ideation draws from a richer corpus.
 
 The more you compose and analyze, the more domain-aware Nota becomes for your specific style.

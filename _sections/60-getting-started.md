@@ -10,10 +10,10 @@ content_class: install-steps
 
 ### Requisites {#prerequisites}
 
-- [Ruby 3.1+](https://www.ruby-lang.org/){:ext} — the knowledge base server is Ruby.
-- [MusaDSL](https://musadsl.yeste.studio){:ext} — the framework Nota assists with. Nota reads the copy you install for your own work.
+- [Ruby 3.4.7+](https://www.ruby-lang.org/){:ext} - the knowledge base server is Ruby.
+- [MusaDSL](https://musadsl.yeste.studio){:ext} - the framework Nota assists with. Nota reads the copy you install for your own work.
 - A [Voyage AI](https://dash.voyageai.com/){:ext} API key, for the embeddings. The free tier is enough for personal use.
-- macOS or Windows — on Windows on ARM, use an **x64** Ruby, see [Troubleshooting](#troubleshooting). Linux: to be tested.
+- macOS or Windows - on Windows on ARM, use an **x64** Ruby, see [Troubleshooting](#troubleshooting). Linux: to be tested.
 
 ### Install {#install}
 
@@ -91,7 +91,7 @@ setx VOYAGE_API_KEY "your-key-here"</code></pre>
         Finish the setup:
         <pre><code>/nota:setup</code></pre>
         <p>
-          It reports what is still missing and installs it — about 30 MB, once. Your own
+          It reports what is still missing and installs it - about 30 MB, once. Your own
           Ruby is not touched.
         </p>
       </li>
@@ -128,7 +128,7 @@ Say **"hello musa"** for the welcome tour, or go straight to
 
 Everything lands in `~/.config/nota/`, and `/nota:setup` brings all
 of it: the Ruby dependencies the knowledge base runs on, the 200 KB
-`sqlite-vec` extension, and the latest `knowledge.db` — [MusaDSL](https://musadsl.yeste.studio)
+`sqlite-vec` extension, and the latest `knowledge.db` - [MusaDSL](https://musadsl.yeste.studio)
 documentation, API reference, demos and best practices, pre-indexed with their Voyage
 embeddings. Your `private.db` is created empty the first time you index a work
 of your own; nothing private leaves your machine.
@@ -136,7 +136,7 @@ of your own; nothing private leaves your machine.
 ### License {#license}
 
 - **Free of charge.** Install it and use it, on as many machines as you
-  like, for anything — including professional and commercial work.
+  like, for anything - including professional and commercial work.
 - **What you make with Nota is yours.** Scores, recordings, analyses and
   code, whether you wrote it or the assistant did: no condition from Nota itself, and
   nothing owed in return. Code that uses [MusaDSL](https://musadsl.yeste.studio) follows MusaDSL's terms like any other:
@@ -167,16 +167,16 @@ Detailed README and the knowledge base releases:
 |---|---|
 | `/nota:setup` says Voyage key missing | The key is not in the environment your agent was launched from. Set it, then reopen Claude Code or opencode from a terminal that has it. |
 | Knowledge base did not download | Check internet connectivity; `/nota:setup` retries the download. |
-| Search returns empty results | The plugin may not have indexed your local works yet — run `/nota:index` on the project root. |
-| `Could not find mcp-…` / `sqlite3-…` in locally installed gems | The knowledge base server says this and stops, which is what it is meant to do: the gems are installed by `/nota:setup`, not on startup. Run it, then start Claude Code again — `claude --continue` keeps the conversation. Reloading plugins does not restart an MCP server. |
-| The session says the platform is not supported | Windows on ARM: neither `sqlite3` nor `sqlite-vec` publishes a build for it. Install a Ruby built for x64 — Windows runs it under emulation — and set `NOTA_RUBY` to its `ruby.exe` so your other Ruby work keeps the interpreter you have. |
+| Search returns empty results | The plugin may not have indexed your local works yet - run `/nota:index` on the project root. |
+| `Could not find mcp-…` / `sqlite3-…` in locally installed gems | The knowledge base server says this and stops, which is what it is meant to do: the gems are installed by `/nota:setup`, not on startup. Run it, then start Claude Code again - `claude --continue` keeps the conversation. Reloading plugins does not restart an MCP server. |
+| The session says the platform is not supported | Windows on ARM: neither `sqlite3` nor `sqlite-vec` publishes a build for it. Install a Ruby built for x64 - Windows runs it under emulation - and set `NOTA_RUBY` to its `ruby.exe` so your other Ruby work keeps the interpreter you have. |
 | The sqlite-vec extension did not download | The knowledge base cannot open without it. Check internet connectivity and reopen the session; `/nota:setup` reports the path it resolved and retries. |
-| `Missing environment variables: HOME`, and no Nota tools available | Nota 1.0.1 and earlier on Windows. Update the plugin — 1.0.2 no longer asks the editor where your home directory is. |
+| `Missing environment variables: HOME`, and no Nota tools available | Nota 1.0.1 and earlier on Windows. Update the plugin - 1.0.2 no longer asks the editor where your home directory is. |
 | MCP server connection failing | Run `/nota:setup`: it reports the Ruby side, the key, the extension and both databases, and names which one is missing. |
 {: .libraries-table}
 
-**If installation fails on your platform, please tell me** — especially on
-Linux or Windows. Open an issue at
+**If installation fails on your platform, open an issue** - especially on
+Linux or Windows - at
 [<ion-icon name="logo-github"></ion-icon> javier-sy/nota](https://github.com/javier-sy/nota/issues){:ext}
 with your operating system, the output of `ruby -v`, and what
 `/nota:setup` reports.
