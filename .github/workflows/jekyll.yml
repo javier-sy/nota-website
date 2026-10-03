@@ -32,8 +32,9 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Fetch yeste.studio news
-        # The News section's headlines (yeste-studio-theme/docs/news.md); without them it keeps its links
-        run: curl -fsSL https://yeste.studio/news.json -o _data/news.json || echo '[]' > _data/news.json
+        # The news of the News section, news page and feed (yeste-studio-theme/docs/news.md); the query
+        # skips the CDN's cached copy right after yeste.studio deploys; without the file there are none
+        run: curl -fsSL "https://yeste.studio/news.json?run=${GITHUB_RUN_ID}" -o _data/news.json || echo '[]' > _data/news.json
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
