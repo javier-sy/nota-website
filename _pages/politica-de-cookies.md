@@ -45,13 +45,21 @@ Puedes cambiarla cuando quieras desde el enlace «configurar cookies» del pie d
 haber aceptado, las cookies de Google Analytics se borran y dejan de enviarse datos. Si la lista de cookies de esta
 web cambia, el aviso vuelve a aparecer para que decidas de nuevo.
 
+## El vídeo de la portada
+
+La portada incluye un vídeo de demostración de YouTube, en su modo de privacidad mejorada
+(youtube-nocookie.com), que se carga al abrir la página. Al cargarse, el navegador se conecta a servidores de
+Google, y el reproductor puede guardar datos en el navegador (cookies o almacenamiento local) para su
+funcionamiento. Esta web no los controla: los gestiona Google según su
+[política de privacidad](https://policies.google.com/privacy?hl=es).
+
 ## ¿Se pueden eliminar las cookies desde el navegador?
 
 Sí. En la configuración de tu navegador puedes ver y borrar las cookies asociadas a cualquier dominio:
 
 - [Google Chrome](https://support.google.com/chrome/answer/95647?hl=es)
 - [Apple Safari](https://support.apple.com/es-es/HT201265)
-- [Microsoft Edge](https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-6c2b-9b38-f8e3-c7a03d5ca6a5)
+- [Microsoft Edge](https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09)
 - [Mozilla Firefox](https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias)
 
 ## Más información sobre las cookies

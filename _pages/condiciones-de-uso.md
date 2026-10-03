@@ -39,10 +39,10 @@ intelectual, etc.), o la legalidad vigente.
   de daño a los sistemas de [nota.yeste.studio](https://nota.yeste.studio).
 
 - Realizar sin la debida autorización cualquier tipo de publicidad o información comercial directamente o de forma
-  encubierta, el envío de correos masivos ("spaming") o envío de grandes mensajes con el fin de bloquear
+  encubierta, el envío de correos masivos ("spamming") o envío de grandes mensajes con el fin de bloquear
   servidores de la red ("mail bombing").
 
-El usuario se compromete no a utilizar el sitio web, ni los contenidos o información y/o los servicios que se ofrecen
+El usuario se compromete a no utilizar el sitio web, ni los contenidos o información y/o los servicios que se ofrecen
 en el mismo para la realización de actividades contrarias a la ley y a respetar en todo momento las presentes
 condiciones generales.
 
