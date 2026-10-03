@@ -74,6 +74,8 @@ Descripción de las categorías de usuarios de la web y de las categorías de da
     Google Analytics 14 meses como máximo, y los informes agregados no identifican a nadie.
     - La cookie que guarda tu decisión sobre las cookies de análisis caduca a los 24 meses.
 
+{% include newsletter-privacy.md %}
+
 # Derechos de los usuarios
 
 Cualquier persona tiene derecho a obtener confirmación sobre si [nota.yeste.studio](https://nota.yeste.studio)

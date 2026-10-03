@@ -7,3 +7,5 @@ Gemfile.lock
 node_modules/
 .idea/
 .DS_Store
+# Fetched from yeste.studio by the Pages workflow
+_data/news.json

@@ -4,6 +4,9 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  # Daily rebuild, so the News section picks up what yeste.studio publishes
+  schedule:
+    - cron: "17 5 * * *"
 
 permissions:
   contents: read
@@ -28,6 +31,9 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Fetch yeste.studio news
+        # The News section's headlines (yeste-studio-theme/docs/news.md); without them it keeps its links
+        run: curl -fsSL https://yeste.studio/news.json -o _data/news.json || echo '[]' > _data/news.json
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
