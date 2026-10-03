@@ -22,8 +22,11 @@ menu__settings:
       url: '/#knowledge'
     - title: 'Getting Started'
       url: '/#getting-started'
-    - title: 'MusaDSL'
-      url: 'https://musadsl.yeste.studio'
+    - title: 'News'
+      url: '/#news'
+      group: true   # starts a new group: the header sets it apart from the item before
+    - title: 'Author'
+      url: 'https://yeste.studio'
       external: true
 
 #-------------------------------
