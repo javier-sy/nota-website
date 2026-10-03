@@ -19,6 +19,7 @@ defaults:
       path: '_pages'
     values:
       permalink: /:basename:output_ext
+      lang: es    # the legal pages are in Spanish
 
 include:
   - _pages
