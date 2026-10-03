@@ -23,6 +23,17 @@ defaults:
 include:
   - _pages
 
+# The home page is assembled from _sections by the theme's product layout (docs/product-sites.md)
+collections:
+  sections:
+    output: false
+
+# Code blocks in Markdown come out as plain <pre><code>, as the page always had them;
+# {% highlight %} still colours code.
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
+
 exclude:
   - .idea/
   - Gemfile.lock

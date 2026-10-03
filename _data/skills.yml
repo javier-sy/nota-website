@@ -1,0 +1,65 @@
+# The Skills section (yeste-studio-theme/_includes/component-grid.html).
+- title: "Core composition workflow"
+  cards:
+    - title: '<code>/nota:explain</code>'
+      description: >-
+        **Semantic search over [MusaDSL](https://musadsl.yeste.studio).** Ask about any concept and get an accurate,
+        sourced answer with relevant documentation, API details, and working code examples
+        retrieved from the knowledge base.
+    - title: '<code>/nota:think</code>'
+      description: >-
+        **Creative thinking and ideation.** Generates ideas for new compositions or
+        explores new directions for existing ones. Draws from the inspiration framework, your
+        previous analyses, the [MusaDSL](https://musadsl.yeste.studio) knowledge base, and the open web to connect ideas to
+        composers, techniques and traditions with accurate references.
+    - title: '<code>/nota:code</code>'
+      description: >-
+        **Composition coding.** Translates musical intentions into working [MusaDSL](https://musadsl.yeste.studio)
+        Ruby code. Verifies every method call against the API, draws from demo examples and your
+        own indexed works, and always proposes the approach before writing.
+    - title: '<code>/nota:index</code>'
+      description: >-
+        **Works indexing.** Add your composition projects so Claude can reference
+        them. All `.rb` and `.md` files are indexed recursively; once
+        indexed, your works appear in search results and inform every other skill.
+    - title: '<code>/nota:analyze</code>'
+      description: >-
+        **Musical analysis.** Reads your code, interprets it musically, and produces a
+        detailed structured analysis across 10 default dimensions. The analysis is stored as
+        searchable knowledge, enriching every future `/nota:think`, `/nota:code`
+        and `/nota:explain` session.
+    - title: '<code>/nota:best-practices</code>'
+      description: >-
+        **Best practices management.** Extract recurring patterns from your analyses
+        into reusable best practices, or add them manually. `/nota:code` automatically
+        consults them when writing new code, so your consolidated patterns are applied
+        consistently.
+- title: "Framework customization"
+  cards:
+    - title: '<code>/nota:inspiration-framework</code>'
+      description: >-
+        View, modify or reset the **inspiration framework** that guides
+        `/nota:think`. The default has 9 dimensions: *Structure, Time, Pitch,
+        Algorithm, Texture, Instrumentation, Reference, Dialogue, Constraint*. Add your own
+        dimensions or rewrite them entirely.
+    - title: '<code>/nota:analysis-framework</code>'
+      description: >-
+        View, modify or reset the **analysis framework** that guides
+        `/nota:analyze`. The default has 10 dimensions: *Formal Structure, Harmonic
+        and Modal Language, Rhythmic and Temporal Strategy, Generative Strategy, Texture and
+        Instrumentation, Idiomatic Usage, Relation to Other Artists, Notable Technical Patterns,
+        Coding Best Practices, Conclusion*. Customize per your compositional priorities.
+- title: "Onboarding & operations"
+  cards:
+    - title: '<code>/nota:hello</code>'
+      description: >-
+        Welcome and capabilities overview. Start here when interacting with Nota for the first
+        time, or trigger it by saying **"hello musa"**.
+    - title: '<code>/nota:setup</code>'
+      description: >-
+        Plugin configuration and troubleshooting. Verifies the Voyage AI API key, checks
+        knowledge base download, confirms MCP server connectivity. Run this after install.
+    - title: '<code>/nota:license</code>'
+      description: >-
+        Nota's terms of use in three lines, and the exact text on request: what you may do
+        with the plugin, and who owns the music, code and analyses you make with it.
