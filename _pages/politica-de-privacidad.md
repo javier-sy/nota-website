@@ -69,6 +69,10 @@ Descripción de las categorías de usuarios de la web y de las categorías de da
     amparada por la decisión de adecuación del Marco de Privacidad de Datos UE-EE. UU., al que Google LLC está
     adherida. [Política de privacidad de Google](https://policies.google.com/privacy?hl=es).
     - GitHub, Inc. (GitHub Pages): servicio de alojamiento de la web.
+    - Google Ireland Limited, a través de YouTube en su modo de privacidad mejorada (youtube-nocookie.com), que
+    sirve el vídeo de demostración de la portada. El reproductor se carga al abrir la portada, así que el navegador
+    se conecta a servidores de Google, que reciben tu dirección IP y los datos técnicos de la conexión.
+    [Política de privacidad de Google](https://policies.google.com/privacy?hl=es).
 - Plazos previstos para la supresión de las diferentes categorías de datos:
     - Las cookies de Google Analytics caducan a los dos años de tu última visita; los datos de eventos se conservan en
     Google Analytics 14 meses como máximo, y los informes agregados no identifican a nadie.
